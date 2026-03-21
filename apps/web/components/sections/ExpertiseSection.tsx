@@ -32,7 +32,7 @@ export function ExpertiseSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 border-4 border-[#888] [&>*+*]:border-t-4 [&>*+*]:border-[#888] md:[&>*+*]:border-t-0 md:[&>*+*]:border-l-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border-4 border-[#888] [&>*+*]:border-t-4 [&>*+*]:border-[#888] lg:[&>*+*]:border-t-0 lg:[&>*+*]:border-l-4">
           {expertise.map((card, index) => {
             const accent = cardAccents[index] ?? 'var(--accent)'
             return (

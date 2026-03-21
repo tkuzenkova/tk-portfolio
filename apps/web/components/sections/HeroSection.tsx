@@ -71,11 +71,12 @@ export function HeroSection() {
             href="#contact"
             className="group relative overflow-hidden px-7 py-3 rounded-lg font-syne font-semibold text-sm text-bg bg-accent"
           >
-            <span className="relative z-10">Go Contact</span>
+            <span className="relative z-10">Contact Me</span>
             <span className="absolute inset-0 bg-[linear-gradient(to_right,#00E5CC,#7B61FF)] -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
           </a>
           <a
-            href="/cv.pdf"
+            href="/logos/Tetiana-Kuzenkova-Frontend-CV.pdf"
+            download
             className="group relative overflow-hidden px-7 py-3 rounded-lg font-syne font-semibold text-sm border-2 border-accent text-primary hover:text-bg hover:border-transparent transition-colors duration-500"
           >
             <span className="relative z-10">Download CV</span>
@@ -85,10 +86,18 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-xs font-mono text-muted">scroll</span>
-        <div className="w-px h-12 bg-gradient-to-b from-muted to-transparent" />
-      </div>
+      <button
+        onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
+        aria-label="Scroll to My Expertise"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer bg-transparent border-0 p-0"
+      >
+        <span className="text-xs font-mono text-muted group-hover:text-accent transition-colors duration-300">scroll</span>
+        {/* Mouse body */}
+        <div className="relative w-6 h-10 rounded-full border-2 border-muted group-hover:border-accent transition-colors duration-300 flex justify-center pt-2">
+          {/* Scroll wheel dot */}
+          <div className="w-1 h-1 rounded-full bg-muted group-hover:bg-accent transition-colors duration-300 animate-[scrollWheel_1.5s_ease-in-out_infinite]" />
+        </div>
+      </button>
     </section>
   )
 }
