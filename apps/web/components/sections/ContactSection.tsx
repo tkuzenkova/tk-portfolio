@@ -2,6 +2,7 @@
 
 import { contact, testimonials } from '@tk/data'
 import { Mail } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 function TelegramIcon({ className }: { className?: string }) {
   return (
@@ -29,6 +30,12 @@ function GitHubIcon({ className }: { className?: string }) {
 
 export function ContactSection() {
   const featured = testimonials.slice(0, 3)
+  const [emailHref, setEmailHref] = useState('#')
+
+  useEffect(() => {
+    const [u, d] = contact.email.split('@')
+    setEmailHref(`mailto:${u}@${d}`)
+  }, [])
 
   return (
     <section id="contact" className="py-24 px-8 md:px-16 border-t border-border bg-bg">
@@ -49,16 +56,10 @@ export function ContactSection() {
             Looking for a dedicated specialist for your team or need help with a specific project? Send me an email or contact me via your preferred platform.
           </p>
 
-          <a
-            href={`mailto:${contact.email}`}
-            className="relative isolate inline-block text-2xl md:text-3xl font-medium font-mono mb-10 break-all transition-opacity hover:opacity-80 text-white after:content-[''] after:absolute after:bottom-0 after:-left-[2px] after:w-[calc(100%+4px)] after:h-[11px] after:bg-accent after:-z-10"
-          >
-            {contact.email}
-          </a>
 
           <div className="flex flex-col gap-4">
             {[
-              { href: `mailto:${contact.email}`, Icon: Mail,          label: 'Email'    },
+              { href: emailHref,                  Icon: Mail,          label: 'Email'    },
               { href: contact.linkedin,           Icon: LinkedInIcon,  label: 'LinkedIn' },
               { href: contact.github,             Icon: GitHubIcon,    label: 'GitHub'   },
               { href: contact.telegram!,          Icon: TelegramIcon,  label: 'Telegram' },

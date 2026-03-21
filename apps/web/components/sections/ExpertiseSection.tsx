@@ -56,11 +56,11 @@ export function ExpertiseSection() {
 
                 {/* Code-styled description */}
                 <div>
-                  <p className="text-sm font-mono mb-3 text-[#888]">&lt;h3&gt;</p>
+                  <p className="text-sm font-mono mb-3 text-muted">&lt;h3&gt;</p>
                   <p className="text-base leading-relaxed font-mono pl-4 border-l-2 border-border text-[#C8C6C0]">
                     {card.description}
                   </p>
-                  <p className="text-sm font-mono mt-3 text-[#888]">&lt;/h3&gt;</p>
+                  <p className="text-sm font-mono mt-3 text-muted">&lt;/h3&gt;</p>
                 </div>
               </div>
             )

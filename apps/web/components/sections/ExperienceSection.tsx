@@ -35,7 +35,7 @@ export function ExperienceSection() {
           </h2>
         </div>
 
-        <Accordion type="single" defaultValue="0" collapsible className="flex flex-col gap-4">
+        <Accordion type="single" collapsible className="flex flex-col gap-4">
           {experience.map((item, i) => (
             <AccordionItem
               key={i}

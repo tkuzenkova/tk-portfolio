@@ -1,32 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import { HeroBackground } from './HeroBackground'
 
-const roles = ['Front-End Engineer', 'React Specialist', 'UI Architect']
-
 export function HeroSection() {
-  const [roleIndex, setRoleIndex] = useState(0)
-  const [displayed, setDisplayed] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-
-  useEffect(() => {
-    const current = roles[roleIndex]
-    let timeout: ReturnType<typeof setTimeout>
-
-    if (!isDeleting && displayed.length < current.length) {
-      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 80)
-    } else if (!isDeleting && displayed.length === current.length) {
-      timeout = setTimeout(() => setIsDeleting(true), 2200)
-    } else if (isDeleting && displayed.length > 0) {
-      timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length - 1)), 40)
-    } else {
-      setIsDeleting(false)
-      setRoleIndex((i) => (i + 1) % roles.length)
-    }
-
-    return () => clearTimeout(timeout)
-  }, [displayed, isDeleting, roleIndex])
 
   return (
     <section
@@ -48,11 +24,10 @@ export function HeroSection() {
           TETIANA KUZENKOVA
         </h1>
 
-        {/* Typing role */}
-        <div className="h-10 flex items-center justify-center mb-6">
+        {/* Role */}
+        <div className="flex items-center justify-center mb-6">
           <span className="text-xl md:text-2xl font-mono tracking-wider text-accent">
-            {displayed}
-            <span className="inline-block w-0.5 h-6 ml-0.5 animate-pulse bg-accent align-middle" />
+            Front-end Engineer
           </span>
         </div>
 
