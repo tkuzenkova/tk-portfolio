@@ -1,0 +1,102 @@
+:root {
+  --accent: #00E5CC;
+  --accent-2: #7B61FF;
+  --bg: #0D0D0F;
+  --bg-surface: #141416;
+  --text-primary: #F0EEE9;
+  --text-muted: #6B6A65;
+  --border: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --font-mono: var(--font-roboto-mono), monospace;
+  --color-primary: var(--text-primary);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-bg: var(--bg);
+  --color-surface: var(--bg-surface);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-roboto-mono), monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-poppins), sans-serif;
+    font-weight: 600;
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+}
+
+@layer components {
+  .skill-item {
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    transition: border-color 0.2s;
+  }
+  .skill-item:hover { border-color: var(--accent); }
+
+  .expertise-card {
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .expertise-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  .testimonial-card {
+    border: 1px solid var(--border);
+    background: var(--bg-surface);
+    transition: border-color 0.2s;
+  }
+  .testimonial-card:hover { border-color: rgba(255, 255, 255, 0.15); }
+
+  .link-muted {
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+  .link-muted:hover { color: var(--accent); }
+
+  .btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+}
+
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.animate-marquee-left  { animation: marquee-left  60s linear infinite; }
+.animate-marquee-right { animation: marquee-right 80s linear infinite; }
+.marquee-track:hover .animate-marquee-left,
+.marquee-track:hover .animate-marquee-right { animation-play-state: paused; }
