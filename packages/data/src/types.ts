@@ -8,10 +8,10 @@ export interface ExperienceItem {
   role: string
   company: string
   period: string
-  project: string
+  project?: string
   bullets: string[]
-  stack: string[]
-  team: string
+  stack?: string[]
+  team?: string
 }
 
 export interface ExpertiseCard {
@@ -25,7 +25,6 @@ export interface Testimonial {
   text: string
   author: string
   role: string
-  company: string
   avatar?: string
 }
 
@@ -33,4 +32,5 @@ export interface ContactInfo {
   email: string
   linkedin: string
   github: string
+  telegram?: string
 }

@@ -4,7 +4,7 @@ export const experience: ExperienceItem[] = [
   {
     role: 'Lead Front-end Engineer (AI-Driven Development)',
     company: 'Gentle Code',
-    period: 'March 2025 – present',
+    period: 'Mar 2025 – present',
     project: 'AI-powered FSM Platform',
     bullets: [
       'Engineered a high-performance Monorepo with shared packages, ensuring 100% code reuse between Client and Admin applications.',
@@ -19,7 +19,7 @@ export const experience: ExperienceItem[] = [
   {
     role: 'Senior Front-end Engineer',
     company: 'Gentle Code',
-    period: 'January 2020 – March 2025',
+    period: 'Jan 2020 – Mar 2025',
     project: 'Merchant Services CRM',
     bullets: [
       'Architected complex, multi-step forms with schema-based validation and efficient state management.',
@@ -34,7 +34,7 @@ export const experience: ExperienceItem[] = [
   {
     role: 'Front-end Engineer',
     company: 'Gentle Code',
-    period: 'June 2016 – April 2020',
+    period: 'Jun 2016 – Apr 2020',
     project: 'Transportation Management Software (TMS)',
     bullets: [
       'Developed a dual-platform system: Client Booking Application and Administration Panel.',
@@ -48,7 +48,7 @@ export const experience: ExperienceItem[] = [
   {
     role: 'Front-end Engineer & UX Designer',
     company: 'Gentle Code',
-    period: 'January 2013 – June 2015',
+    period: 'Jan 2013 – Jun 2015',
     project: 'Internal web applications',
     bullets: [
       'Executed UI design and rapid prototyping for web applications.',
@@ -57,12 +57,12 @@ export const experience: ExperienceItem[] = [
       'Delivered pixel-perfect, responsive, cross-browser compatible layouts.',
     ],
     stack: ['Adobe XD', 'Photoshop', 'SCSS', 'HTML5', 'Bootstrap', 'JavaScript'],
-    team: 'FE, Designer',
+    team: '2 BE, 2 FE, Designer',
   },
   {
     role: 'HTML/CSS Developer',
     company: 'Rainboweb Studio',
-    period: 'June 2011 – January 2013',
+    period: 'Jun 2011 – Jan 2013',
     project: '50+ client web projects',
     bullets: [
       'Successfully delivered 50+ web projects with pixel-perfect execution.',
@@ -71,5 +71,11 @@ export const experience: ExperienceItem[] = [
     ],
     stack: ['Photoshop', 'CSS', 'HTML', 'jQuery', 'WordPress'],
     team: '2 BE, FE, Designer',
+  },
+  {
+    role: 'Master of Degree in Technology Publications',
+    company: 'Kharkiv National University of Radio Electronics',
+    period: 'Sep 2005 – Mar 2011',
+    bullets: [],
   },
 ]
