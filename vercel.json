@@ -1,6 +1,5 @@
 {
   "buildCommand": "turbo run build --filter=@tk/web",
   "installCommand": "pnpm install",
-  "outputDirectory": "apps/web/.next",
-  "framework": "nextjs"
+  "outputDirectory": "apps/web/.next"
 }

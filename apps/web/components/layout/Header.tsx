@@ -42,10 +42,10 @@ export function Header() {
               href={href}
               className={cn(
                 'flex items-start gap-1.5 text-[17px] font-medium font-mono transition-colors',
-                activeSection === label ? 'text-accent' : 'text-muted hover:text-primary',
+                activeSection === label ? 'text-accent' : 'text-primary/50 hover:text-primary',
               )}
             >
-              <span className="text-[10px] text-muted">{num}</span>
+              <span className="text-[10px] text-primary/30">{num}</span>
               <span>// {label}</span>
             </a>
           ))}
@@ -73,7 +73,7 @@ export function Header() {
                       href={href}
                       className={cn(
                         'flex items-center gap-2 text-sm font-mono py-2 transition-colors',
-                        activeSection === label ? 'text-accent' : 'text-muted hover:text-primary',
+                        activeSection === label ? 'text-accent' : 'text-primary/50 hover:text-primary',
                       )}
                     >
                       <span className="text-[10px]">{num}</span>
