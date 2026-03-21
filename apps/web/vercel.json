@@ -1,4 +1,0 @@
-{
-  "buildCommand": "cd ../.. && pnpm turbo run build --filter=@tk/web",
-  "installCommand": "cd ../.. && pnpm install"
-}
