@@ -27,10 +27,8 @@ export interface Testimonial {
   role: string
   avatar?: string
 }
-
+  
 export interface ContactInfo {
-  email: string
   linkedin: string
   github: string
-  telegram?: string
 }

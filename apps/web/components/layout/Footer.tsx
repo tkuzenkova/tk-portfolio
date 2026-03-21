@@ -1,15 +1,8 @@
 'use client'
 
 import { contact } from '@tk/data'
-import { useEffect, useState } from 'react'
 
 export function Footer() {
-  const [emailHref, setEmailHref] = useState('#')
-
-  useEffect(() => {
-    const [u, d] = contact.email.split('@')
-    setEmailHref(`mailto:${u}@${d}`)
-  }, [])
 
   return (
     <footer className="border-t border-border py-8 px-6">
@@ -19,7 +12,6 @@ export function Footer() {
         </p>
         <div className="flex items-center gap-6">
           {[
-            { label: 'Email', href: emailHref },
             { label: 'LinkedIn', href: contact.linkedin },
             { label: 'GitHub', href: contact.github },
           ].map(({ label, href }) => (
