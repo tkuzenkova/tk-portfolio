@@ -1,5 +1,4 @@
 {
   "buildCommand": "turbo run build --filter=@tk/web",
-  "outputDirectory": ".next",
   "installCommand": "pnpm install"
 }
