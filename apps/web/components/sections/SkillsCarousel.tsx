@@ -8,17 +8,13 @@ function MarqueeRow({ items, reverse }: { items: typeof skills; reverse?: boolea
         {doubled.map((skill, i) => (
           <div
             key={`${skill.name}-${i}`}
-            className="skill-item flex items-center gap-3 px-6 py-3 mx-3 rounded-lg flex-shrink-0 cursor-default group"
+            className="flex items-center gap-3 px-6 py-3 mx-3 rounded-lg shrink-0 cursor-default group border border-border bg-surface transition-colors hover:border-accent"
+            style={{ '--skill-color': skill.color } as React.CSSProperties}
           >
-            <span
-              className="text-base flex-shrink-0 transition-transform group-hover:scale-110"
-              style={{ color: skill.color }}
-            >
+            <span className="text-base shrink-0 transition-transform group-hover:scale-110 text-(--skill-color)">
               ◆
             </span>
-            <span className="text-sm font-mono whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>
-              {skill.name}
-            </span>
+            <span className="text-sm font-mono whitespace-nowrap text-muted">{skill.name}</span>
           </div>
         ))}
       </div>
@@ -29,10 +25,7 @@ function MarqueeRow({ items, reverse }: { items: typeof skills; reverse?: boolea
 export function SkillsCarousel() {
   const half = Math.ceil(skills.length / 2)
   return (
-    <section
-      className="py-16 border-y overflow-hidden"
-      style={{ borderColor: 'var(--border)', background: 'var(--bg)' }}
-    >
+    <section className="py-16 border-y border-border overflow-hidden bg-bg">
       <div className="flex flex-col gap-4">
         <MarqueeRow items={skills.slice(0, half)} />
         <MarqueeRow items={skills.slice(half)} reverse />

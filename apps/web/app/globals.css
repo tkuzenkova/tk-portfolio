@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@tk/ui/globals.css";
+@source "../../../packages/ui/src";
 
 @keyframes cursor-blink {
   0%, 66% { opacity: 1; }

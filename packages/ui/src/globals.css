@@ -10,12 +10,14 @@
 
 @theme inline {
   --font-mono: var(--font-roboto-mono), monospace;
+  --font-syne: var(--font-syne);
   --color-primary: var(--text-primary);
   --color-muted: var(--text-muted);
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-bg: var(--bg);
   --color-surface: var(--bg-surface);
+  --color-border: var(--border);
 }
 
 @layer base {
@@ -48,44 +50,6 @@
   ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 }
 
-@layer components {
-  .skill-item {
-    border: 1px solid var(--border);
-    background: var(--bg-surface);
-    transition: border-color 0.2s;
-  }
-  .skill-item:hover { border-color: var(--accent); }
-
-  .expertise-card {
-    border: 1px solid var(--border);
-    background: var(--bg-surface);
-    transition: border-color 0.3s, transform 0.3s;
-  }
-  .expertise-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-  }
-
-  .testimonial-card {
-    border: 1px solid var(--border);
-    background: var(--bg-surface);
-    transition: border-color 0.2s;
-  }
-  .testimonial-card:hover { border-color: rgba(255, 255, 255, 0.15); }
-
-  .link-muted {
-    color: var(--text-muted);
-    transition: color 0.2s;
-  }
-  .link-muted:hover { color: var(--accent); }
-
-  .btn-outline {
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-}
 
 @keyframes marquee-left {
   from { transform: translateX(0); }
