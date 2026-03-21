@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollToTopButton } from '@/components/layout/ScrollToTopButton'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { SkillsCarousel } from '@/components/sections/SkillsCarousel'
 import { ExpertiseSection } from '@/components/sections/ExpertiseSection'
@@ -20,6 +21,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTopButton />
     </>
   )
 }

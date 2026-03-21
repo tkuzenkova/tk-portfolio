@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useActiveSection } from '@/hooks/useActiveSection'
-import { Sheet, SheetTrigger, SheetContent } from '@tk/ui'
+import { Sheet, SheetTrigger, SheetContent, SheetClose, SheetTitle } from '@tk/ui'
 import { cn } from '@/lib/utils'
 import { Menu } from 'lucide-react'
 
@@ -24,22 +24,14 @@ export function Header() {
   }, [])
 
   return (
-    <header
-      className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300')}
-      style={
-        scrolled
-          ? { background: 'rgba(13,13,15,0.85)', backdropFilter: 'blur(12px)', borderBottom: '1px solid var(--accent-2)' }
-          : { background: 'transparent' }
-      }
-    >
+    <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300', scrolled && 'bg-bg/85 backdrop-blur-md border-b border-accent-2')}>
       <div className="max-w-7xl mx-auto px-10 md:px-20 h-16 flex items-center justify-between">
         {/* Logo */}
         <a
           href="#home"
-          className="font-mono text-2xl font-bold tracking-wide hover:opacity-80 transition-opacity"
-          style={{ color: 'var(--accent)', fontFamily: 'var(--font-syne)' }}
+          className="font-syne font-mono text-2xl font-bold tracking-wide text-accent hover:opacity-80 transition-opacity"
         >
-          TK.<span className="cursor-blink" style={{ color: '#FF6B2B' }}>_</span>
+          TK.<span className="cursor-blink text-[#FF6B2B]">_</span>
         </a>
 
         {/* Desktop Nav */}
@@ -48,18 +40,12 @@ export function Header() {
             <a
               key={label}
               href={href}
-              className="flex items-start gap-1.5 text-[17px] font-medium font-mono transition-colors"
-              style={{ color: activeSection === label ? 'var(--accent)' : 'var(--text-muted)' }}
-              onMouseEnter={(e) => {
-                if (activeSection !== label)
-                  (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)'
-              }}
-              onMouseLeave={(e) => {
-                if (activeSection !== label)
-                  (e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'
-              }}
+              className={cn(
+                'flex items-start gap-1.5 text-[17px] font-medium font-mono transition-colors',
+                activeSection === label ? 'text-accent' : 'text-muted hover:text-primary',
+              )}
             >
-              <span style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{num}</span>
+              <span className="text-[10px] text-muted">{num}</span>
               <span>// {label}</span>
             </a>
           ))}
@@ -69,30 +55,31 @@ export function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <button aria-label="Open menu" className="p-2" style={{ color: 'var(--text-primary)' }}>
+              <button aria-label="Open menu" className="p-2 text-primary">
                 <Menu className="w-5 h-5" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="border-l-(--border) bg-surface">
+              <SheetTitle className="sr-only">Navigation</SheetTitle>
               <div className="mb-8">
-                <span
-                  className="font-mono text-lg font-bold"
-                  style={{ color: 'var(--accent)', fontFamily: 'var(--font-syne)' }}
-                >
-                  TK.<span className="cursor-blink" style={{ color: '#FF6B2B' }}>_</span>
+                <span className="font-syne font-mono text-lg font-bold text-accent">
+                  TK.<span className="cursor-blink text-[#FF6B2B]">_</span>
                 </span>
               </div>
               <nav className="flex flex-col gap-4">
                 {navItems.map(({ num, label, href }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    className="flex items-center gap-2 text-sm font-mono py-2 transition-colors"
-                    style={{ color: activeSection === label ? 'var(--accent)' : 'var(--text-muted)' }}
-                  >
-                    <span style={{ fontSize: '10px' }}>{num}</span>
-                    <span>// {label}</span>
-                  </a>
+                  <SheetClose key={label} asChild>
+                    <a
+                      href={href}
+                      className={cn(
+                        'flex items-center gap-2 text-sm font-mono py-2 transition-colors',
+                        activeSection === label ? 'text-accent' : 'text-muted hover:text-primary',
+                      )}
+                    >
+                      <span className="text-[10px]">{num}</span>
+                      <span>// {label}</span>
+                    </a>
+                  </SheetClose>
                 ))}
               </nav>
             </SheetContent>

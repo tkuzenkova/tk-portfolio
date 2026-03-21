@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     'Senior Front-End Engineer specializing in React, Next.js, TypeScript, and scalable UI systems.',
   keywords: ['Front-End Engineer', 'React', 'Next.js', 'TypeScript', 'UI Architecture'],
   authors: [{ name: 'Tetiana Kuzenkova' }],
+  icons: { icon: '/icon.svg', shortcut: '/icon.svg' },
   openGraph: {
     title: 'Tetiana Kuzenkova — Front-End Engineer',
     description:

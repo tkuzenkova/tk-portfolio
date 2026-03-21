@@ -1,15 +1,30 @@
 import { expertise } from '@tk/data'
-import { Monitor, Layers, Cpu } from 'lucide-react'
+import { Cpu, Layers, Monitor } from 'lucide-react'
+
+function ReactLogo({ className }: { className?: string }) {
+  return (
+    <svg viewBox="-11.5 -10.232 23 20.463" className={className} fill="currentColor" aria-label="React">
+      <circle cx="0" cy="0" r="2.05" />
+      <g stroke="currentColor" strokeWidth="1" fill="none">
+        <ellipse rx="11" ry="4.2" />
+        <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+        <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+      </g>
+    </svg>
+  )
+}
 
 const iconMap: Record<string, React.ReactNode> = {
-  monitor: <Monitor className="w-6 h-6" />,
-  layers:  <Layers  className="w-6 h-6" />,
-  cpu:     <Cpu     className="w-6 h-6" />,
+  monitor: <ReactLogo className="w-12 h-12" />,
+  layers:  <Layers    className="w-12 h-12" />,
+  cpu:     <Cpu       className="w-12 h-12" />,
 }
+
+const cardAccents = ['#A0185A', '#5241C8', '#B85520']
 
 export function ExpertiseSection() {
   return (
-    <section id="expertise" className="py-24 px-8 md:px-16" style={{ background: 'var(--bg)' }}>
+    <section id="expertise" className="py-24 px-8 md:px-16 bg-bg">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-semibold text-primary">
@@ -17,40 +32,39 @@ export function ExpertiseSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {expertise.map((card) => (
-            <div key={card.title} className="expertise-card group relative p-8 rounded-xl">
-              {/* Code tag top */}
-              <p className="text-xs font-mono mb-4" style={{ color: 'var(--accent)', opacity: 0.5 }}>
-                &lt;h3&gt;
-              </p>
-
-              {/* Icon */}
+        <div className="grid grid-cols-1 md:grid-cols-3 border-4 border-[#888] [&>*+*]:border-t-4 [&>*+*]:border-[#888] md:[&>*+*]:border-t-0 md:[&>*+*]:border-l-4">
+          {expertise.map((card, index) => {
+            const accent = cardAccents[index] ?? 'var(--accent)'
+            return (
               <div
-                className="mb-4 transition-transform group-hover:scale-110"
-                style={{ color: 'var(--accent)' }}
+                key={card.title}
+                className="p-8 flex flex-col gap-6"
+                style={{ '--card-accent': accent } as React.CSSProperties}
               >
-                {iconMap[card.icon] ?? <Monitor className="w-6 h-6" />}
+                {/* Header: icon + title block */}
+                <div className="flex items-start gap-4">
+                  <div className="text-(--card-accent)">
+                    {iconMap[card.icon] ?? <Monitor className="w-12 h-12" />}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="relative isolate inline-block text-2xl font-bold text-primary leading-tight mb-2 after:content-[''] after:absolute after:bottom-0 after:-left-[2px] after:w-[calc(100%+4px)] after:h-[11px] after:bg-(--card-accent) after:-z-10">
+                      {card.title}
+                    </h3>
+                    <p className="text-2xl font-bold text-primary">{card.subtitle}</p>
+                  </div>
+                </div>
+
+                {/* Code-styled description */}
+                <div>
+                  <p className="text-sm font-mono mb-3 text-[#888]">&lt;h3&gt;</p>
+                  <p className="text-base leading-relaxed font-mono pl-4 border-l-2 border-border text-[#C8C6C0]">
+                    {card.description}
+                  </p>
+                  <p className="text-sm font-mono mt-3 text-[#888]">&lt;/h3&gt;</p>
+                </div>
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-semibold mb-1 text-primary">
-                {card.title}
-              </h3>
-              <p className="font-semibold mb-4" style={{ color: 'var(--accent)' }}>
-                {card.subtitle}
-              </p>
-
-              <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-                {card.description}
-              </p>
-
-              {/* Code tag bottom */}
-              <p className="text-xs font-mono mt-4" style={{ color: 'var(--accent)', opacity: 0.5 }}>
-                &lt;/h3&gt;
-              </p>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>
