@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { HeroBackground } from './HeroBackground'
 
 const roles = ['Front-End Engineer', 'React Specialist', 'UI Architect']
 
@@ -32,12 +33,11 @@ export function HeroSection() {
       id="home"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-bg"
     >
+      {/* Aurora background */}
+      <HeroBackground />
+
       {/* Dot grid */}
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,rgb(255_255_255/0.04)_1px,transparent_1px)] [background-size:40px_40px]" />
-
-      {/* Accent glows */}
-      <div className="absolute pointer-events-none top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgb(0_229_204/0.07)_0%,transparent_70%)]" />
-      <div className="absolute pointer-events-none bottom-[20%] right-[20%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgb(123_97_255/0.06)_0%,transparent_70%)]" />
 
       <div className="relative z-10 flex flex-col items-center px-6 md:px-16 w-full max-w-screen-2xl mx-auto">
         {/* Available badge */}
