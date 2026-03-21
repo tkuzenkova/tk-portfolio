@@ -8,6 +8,28 @@
   100% { transform: translateY(0); opacity: 1; }
 }
 
+@keyframes orb-1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(15%, 10%) scale(1.15); }
+}
+@keyframes orb-2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-12%, -8%) scale(1.1); }
+}
+@keyframes orb-3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(8%, -12%) scale(0.9); }
+}
+@keyframes orb-4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-10%, 15%) scale(1.2); }
+}
+
+.orb-1 { animation: orb-1 25s ease-in-out infinite alternate; }
+.orb-2 { animation: orb-2 30s ease-in-out infinite alternate; }
+.orb-3 { animation: orb-3 20s ease-in-out infinite alternate; }
+.orb-4 { animation: orb-4 35s ease-in-out infinite alternate; }
+
 @keyframes cursor-blink {
   0%, 66% { opacity: 1; }
   67%, 100% { opacity: 0; }
