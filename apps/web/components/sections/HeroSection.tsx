@@ -57,7 +57,7 @@ export function HeroSection() {
         </div>
 
         {/* Tagline */}
-        <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed text-center text-muted">
+        <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed text-center text-primary/55">
           10+ years crafting performant, accessible, and beautifully engineered interfaces.
           Specializing in React ecosystems, design systems, and AI-driven development workflows.
         </p>
