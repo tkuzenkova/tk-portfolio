@@ -31,13 +31,10 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-bg"
+      className="hero-background relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
       {/* Aurora background */}
       <HeroBackground />
-
-      {/* Dot grid */}
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle,rgb(255_255_255/0.04)_1px,transparent_1px)] [background-size:40px_40px]" />
 
       <div className="relative z-10 flex flex-col items-center px-6 md:px-16 w-full max-w-screen-2xl mx-auto">
         {/* Available badge */}
