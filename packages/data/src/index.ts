@@ -1,0 +1,6 @@
+export * from './types'
+export * from './skills'
+export * from './experience'
+export * from './expertise'
+export * from './testimonials'
+export * from './contact'
