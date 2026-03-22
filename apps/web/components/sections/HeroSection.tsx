@@ -58,18 +58,16 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <button
-        onClick={() => document.getElementById('expertise')?.scrollIntoView({ behavior: 'smooth' })}
+      <a
+        href="#expertise"
         aria-label="Scroll to My Expertise"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group cursor-pointer bg-transparent border-0 p-0"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group"
       >
         <span className="text-xs font-mono text-muted group-hover:text-accent transition-colors duration-300">scroll</span>
-        {/* Mouse body */}
         <div className="relative w-6 h-10 rounded-full border-2 border-muted group-hover:border-accent transition-colors duration-300 flex justify-center pt-2">
-          {/* Scroll wheel dot */}
           <div className="w-1 h-1 rounded-full bg-muted group-hover:bg-accent transition-colors duration-300 animate-[scrollWheel_1.5s_ease-in-out_infinite]" />
         </div>
-      </button>
+      </a>
     </section>
   )
 }
