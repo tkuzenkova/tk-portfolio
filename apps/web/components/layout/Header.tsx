@@ -1,10 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { useActiveSection } from '@/hooks/useActiveSection'
-import { Sheet, SheetTrigger, SheetContent, SheetClose, SheetTitle } from '@tk/ui'
 import { cn } from '@/lib/utils'
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@tk/ui'
 import { Menu } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 const navItems = [
   { num: '01', label: 'home',       href: '#home' },
@@ -29,7 +29,7 @@ export function Header() {
         {/* Logo */}
         <a
           href="#home"
-          className="font-syne font-mono text-2xl font-bold tracking-wide text-accent hover:opacity-80 transition-opacity"
+          className="font-mono text-2xl font-bold tracking-wide text-accent hover:opacity-80 transition-opacity"
         >
           TK.<span className="cursor-blink text-[#FF6B2B]">_</span>
         </a>
@@ -59,10 +59,10 @@ export function Header() {
                 <Menu className="w-5 h-5" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="border-l-(--border) bg-surface">
+            <SheetContent side="right" className="border-l-border bg-surface">
               <SheetTitle className="sr-only">Navigation</SheetTitle>
               <div className="mb-8">
-                <span className="font-syne font-mono text-lg font-bold text-accent">
+                <span className="font-mono text-lg font-bold text-accent">
                   TK.<span className="cursor-blink text-[#FF6B2B]">_</span>
                 </span>
               </div>

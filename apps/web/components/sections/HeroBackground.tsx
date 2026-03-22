@@ -101,7 +101,7 @@ export function HeroBackground() {
         <div
           key={i}
           ref={el => { layerRefs.current[i] = el }}
-          className="absolute inset-0"
+          className="hidden md:block absolute inset-0"
           style={{ willChange: 'transform' }}
         >
           {layer.squares.map((sq, j) => (
