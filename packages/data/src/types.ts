@@ -4,30 +4,20 @@ export interface Skill {
   color: string
 }
 
-export interface ExperienceItem {
-  role: string
-  company: string
+export interface ExpertiseCardMeta {
+  icon: string
+}
+
+export interface ExperienceItemMeta {
   period: string
-  project?: string
-  bullets: string[]
   stack?: string[]
   team?: string
 }
 
-export interface ExpertiseCard {
-  title: string
-  subtitle: string
-  description: string
-  icon: string
+export interface TestimonialMeta {
+  author: string
 }
 
-export interface Testimonial {
-  text: string
-  author: string
-  role: string
-  avatar?: string
-}
-  
 export interface ContactInfo {
   linkedin: string
   github: string

@@ -1,81 +1,32 @@
-import type { ExperienceItem } from './types'
+import type { ExperienceItemMeta } from './types'
 
-export const experience: ExperienceItem[] = [
+export const experienceMeta: ExperienceItemMeta[] = [
   {
-    role: 'Lead Front-end Engineer (AI-Driven Development)',
-    company: 'Gentle Code',
     period: 'Mar 2025 – present',
-    project: 'AI-powered FSM Platform',
-    bullets: [
-      'Engineered a high-performance Monorepo with shared packages, ensuring 100% code reuse between Client and Admin applications.',
-      'Architected a reusable, accessible UI library using Tailwind CSS v4 and React Aria, integrated with Storybook.',
-      'Implemented RBAC with server-side validation and type-safe API layer using Zod schemas.',
-      'Created 20+ Claude Code CLI commands for automated scaffolding of standardized feature modules.',
-      'Integrated MCP (Model Context Protocol) for AI-assisted API integration.',
-    ],
     stack: ['Next.js 15', 'React 19', 'TypeScript', 'TanStack Query', 'TanStack Table', 'Zod', 'Tailwind v4', 'React Aria', 'Claude Code', 'MCP'],
     team: '3 BE, 2 FE, QA, Designer, BA',
   },
   {
-    role: 'Senior Front-end Engineer',
-    company: 'Gentle Code',
     period: 'Jan 2020 – Mar 2025',
-    project: 'Merchant Services CRM',
-    bullets: [
-      'Architected complex, multi-step forms with schema-based validation and efficient state management.',
-      'Integrated REST APIs and FusionAuth for secure merchant authentication and session management.',
-      'Developed a reusable UI component library and responsive layouts.',
-      'Customized Zendesk Help Center themes and created custom pages.',
-      'Improved performance by implementing lazy loading and strategic code refactoring.',
-    ],
     stack: ['React', 'TypeScript', 'Redux', 'React Query', 'React Hook Form', 'CSS Modules', 'SASS', 'Bootstrap 4', 'Jest'],
     team: '5 BE, 4–6 FE, 4 QA, 2 Designers, BA, PM',
   },
   {
-    role: 'Front-end Engineer',
-    company: 'Gentle Code',
     period: 'Jun 2016 – Apr 2020',
-    project: 'Transportation Management Software (TMS)',
-    bullets: [
-      'Developed a dual-platform system: Client Booking Application and Administration Panel.',
-      'Engineered a reusable component library, reducing development time for new features.',
-      'Ensured Web Accessibility (A11y) compliance, including keyboard-only navigation.',
-      'Delivered mobile-first responsive interfaces.',
-    ],
     stack: ['React', 'Redux', 'Styled Components', 'LESS', 'Bootstrap 4', 'Storybook'],
     team: '4 BE, 2 FE, 3 QA, 2 Designers, BA, PM',
   },
   {
-    role: 'Front-end Engineer & UX Designer',
-    company: 'Gentle Code',
     period: 'Jan 2013 – Jun 2015',
-    project: 'Internal web applications',
-    bullets: [
-      'Executed UI design and rapid prototyping for web applications.',
-      'Developed and maintained the frontend layer within .NET.',
-      'Optimized visual assets with SVG workflows, custom icon fonts, and image sprites.',
-      'Delivered pixel-perfect, responsive, cross-browser compatible layouts.',
-    ],
     stack: ['Adobe XD', 'Photoshop', 'SCSS', 'HTML5', 'Bootstrap', 'JavaScript'],
     team: '2 BE, 2 FE, Designer',
   },
   {
-    role: 'HTML/CSS Developer',
-    company: 'Rainboweb Studio',
     period: 'Jun 2011 – Jan 2013',
-    project: '50+ client web projects',
-    bullets: [
-      'Successfully delivered 50+ web projects with pixel-perfect execution.',
-      'Implemented cross-browser layouts per W3C standards.',
-      'Collaborated within a team to meet tight deadlines in a high-volume studio environment.',
-    ],
     stack: ['Photoshop', 'CSS', 'HTML', 'jQuery', 'WordPress'],
     team: '2 BE, FE, Designer',
   },
   {
-    role: 'Master of Degree in Technology Publications',
-    company: 'Kharkiv National University of Radio Electronics',
     period: 'Sep 2005 – Mar 2011',
-    bullets: [],
   },
 ]

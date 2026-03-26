@@ -1,0 +1,135 @@
+{
+  "Metadata": {
+    "title": "Tetiana Kuzenkova — Front-End Engineer",
+    "description": "Senior Front-End Engineer specializing in React, Next.js, TypeScript, and scalable UI systems.",
+    "keywords": "Front-End Engineer,React,Next.js,TypeScript,UI Architecture"
+  },
+  "Nav": {
+    "home": "home",
+    "expertise": "expertise",
+    "experience": "experience",
+    "contact": "contact"
+  },
+  "Footer": {
+    "copyright": "© {year} Tetiana Kuzenkova"
+  },
+  "Hero": {
+    "badge": "Available for opportunities",
+    "role": "Front-end Engineer",
+    "tagline": "10+ years crafting performant, accessible, and beautifully engineered interfaces. Specializing in React ecosystems, design systems, and AI-driven development workflows.",
+    "ctaContact": "Contact Me",
+    "ctaCv": "Download CV",
+    "scroll": "scroll",
+    "scrollAriaLabel": "Scroll to My Expertise"
+  },
+  "Expertise": {
+    "heading": "My Expertise",
+    "cards": [
+      {
+        "title": "Frontend",
+        "subtitle": "Architecture",
+        "description": "Building scalable, maintainable React and Next.js applications with Monorepo setups, shared UI libraries, and robust state management patterns."
+      },
+      {
+        "title": "UI Systems &",
+        "subtitle": "Accessibility",
+        "description": "Creating design systems with Radix UI and React Aria, ensuring WCAG compliance, keyboard navigation, and seamless user experiences across all devices."
+      },
+      {
+        "title": "AI-Driven",
+        "subtitle": "Development",
+        "description": "Leveraging Claude Code, MCP, and AI-assisted tooling to automate scaffolding, accelerate feature delivery, and integrate intelligent workflows."
+      }
+    ]
+  },
+  "Experience": {
+    "heading": "Professional Experience",
+    "projectLabel": "Project:",
+    "teamLabel": "Team:",
+    "items": [
+      {
+        "role": "Lead Front-end Engineer (AI-Driven Development)",
+        "company": "Gentle Code",
+        "project": "AI-powered FSM Platform",
+        "bullets": [
+          "Engineered a high-performance Monorepo with shared packages, ensuring 100% code reuse between Client and Admin applications.",
+          "Architected a reusable, accessible UI library using Tailwind CSS v4 and React Aria, integrated with Storybook.",
+          "Implemented RBAC with server-side validation and type-safe API layer using Zod schemas.",
+          "Created 20+ Claude Code CLI commands for automated scaffolding of standardized feature modules.",
+          "Integrated MCP (Model Context Protocol) for AI-assisted API integration."
+        ]
+      },
+      {
+        "role": "Senior Front-end Engineer",
+        "company": "Gentle Code",
+        "project": "Merchant Services CRM",
+        "bullets": [
+          "Architected complex, multi-step forms with schema-based validation and efficient state management.",
+          "Integrated REST APIs and FusionAuth for secure merchant authentication and session management.",
+          "Developed a reusable UI component library and responsive layouts.",
+          "Customized Zendesk Help Center themes and created custom pages.",
+          "Improved performance by implementing lazy loading and strategic code refactoring."
+        ]
+      },
+      {
+        "role": "Front-end Engineer",
+        "company": "Gentle Code",
+        "project": "Transportation Management Software (TMS)",
+        "bullets": [
+          "Developed a dual-platform system: Client Booking Application and Administration Panel.",
+          "Engineered a reusable component library, reducing development time for new features.",
+          "Ensured Web Accessibility (A11y) compliance, including keyboard-only navigation.",
+          "Delivered mobile-first responsive interfaces."
+        ]
+      },
+      {
+        "role": "Front-end Engineer & UX Designer",
+        "company": "Gentle Code",
+        "project": "Internal web applications",
+        "bullets": [
+          "Executed UI design and rapid prototyping for web applications.",
+          "Developed and maintained the frontend layer within .NET.",
+          "Optimized visual assets with SVG workflows, custom icon fonts, and image sprites.",
+          "Delivered pixel-perfect, responsive, cross-browser compatible layouts."
+        ]
+      },
+      {
+        "role": "HTML/CSS Developer",
+        "company": "Rainboweb Studio",
+        "project": "50+ client web projects",
+        "bullets": [
+          "Successfully delivered 50+ web projects with pixel-perfect execution.",
+          "Implemented cross-browser layouts per W3C standards.",
+          "Collaborated within a team to meet tight deadlines in a high-volume studio environment."
+        ]
+      },
+      {
+        "role": "Master of Degree in Technology Publications",
+        "company": "Kharkiv National University of Radio Electronics",
+        "bullets": []
+      }
+    ]
+  },
+  "Testimonials": {
+    "heading": "What People Say",
+    "items": [
+      {
+        "role": "Front End Engineer",
+        "text": "Working alongside Tetiana was an incredible experience. With over 10+ years of experience, she brings a deep level of knowledge to every discussion, especially regarding React and Next.js performance. What sets her apart is her exceptional eye for UI/UX - she doesn't just build interfaces; she architects intuitive, high-performance UI systems with meticulous attention to detail and accessibility. Her dedication to developer experience and code quality is outstanding; her code reviews are insightful, and the modular systems she creates are truly top-tier. She's engineer who makes the entire development process smoother and more efficient."
+      },
+      {
+        "role": "React | Full Stack Developer",
+        "text": "Tatiana is a fantastic teammate. She has a sharp eye for UI details and writes very clean, maintainable code. Any team would be lucky to have her."
+      },
+      {
+        "role": "QA Team Lead | ISTQB Test Manager",
+        "text": "I really enjoyed working with Tatiana. She is a very strong Frontend Lead who delivers high-quality solutions quickly and thoughtfully. Communication with her is always easy and productive, and she creates a great collaborative atmosphere within the team. I'd gladly recommend her as both a talented developer and a great team leader."
+      }
+    ]
+  },
+  "Contact": {
+    "badge": "Open to opportunities",
+    "heading": "Open to full-time opportunities and freelance projects",
+    "description": "Looking for a dedicated specialist for your team or need help with a specific project? Send me an email or contact me via your preferred platform."
+  }
+}

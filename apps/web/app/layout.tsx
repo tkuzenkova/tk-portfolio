@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { Syne, Geist, Poppins, Roboto_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -9,7 +8,7 @@ const syne = Syne({
 })
 
 const geist = Geist({
-  subsets: ['latin'],
+  subsets: ['latin', 'cyrillic'],
   variable: '--font-geist',
 })
 
@@ -20,30 +19,17 @@ const poppins = Poppins({
 })
 
 const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
+  subsets: ['latin', 'cyrillic'],
   variable: '--font-roboto-mono',
   weight: ['400', '500'],
 })
 
-export const metadata: Metadata = {
-  title: 'Tetiana Kuzenkova — Front-End Engineer',
-  description:
-    'Senior Front-End Engineer specializing in React, Next.js, TypeScript, and scalable UI systems.',
-  keywords: ['Front-End Engineer', 'React', 'Next.js', 'TypeScript', 'UI Architecture'],
-  authors: [{ name: 'Tetiana Kuzenkova' }],
-  icons: { icon: '/icon.svg', shortcut: '/icon.svg' },
-  openGraph: {
-    title: 'Tetiana Kuzenkova — Front-End Engineer',
-    description:
-      'Senior Front-End Engineer specializing in React, Next.js, TypeScript, and scalable UI systems.',
-    type: 'website',
-  },
-}
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`${syne.variable} ${geist.variable} ${poppins.variable} ${robotoMono.variable}`}>{children}</body>
+    <html>
+      <body className={`${syne.variable} ${geist.variable} ${poppins.variable} ${robotoMono.variable}`}>
+        {children}
+      </body>
     </html>
   )
 }

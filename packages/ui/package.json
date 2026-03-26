@@ -8,7 +8,8 @@
     "./button": "./src/button.tsx",
     "./badge": "./src/badge.tsx",
     "./accordion": "./src/accordion.tsx",
-    "./sheet": "./src/sheet.tsx"
+    "./sheet": "./src/sheet.tsx",
+    "./language-switcher": "./src/language-switcher.tsx"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"

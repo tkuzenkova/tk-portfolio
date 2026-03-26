@@ -1,4 +1,5 @@
-import { contact, testimonials } from '@tk/data'
+import { contact, testimonialMeta } from '@tk/data'
+import { getTranslations } from 'next-intl/server'
 
 function LinkedInIcon({ className }: { className?: string }) {
   return (
@@ -16,8 +17,13 @@ function GitHubIcon({ className }: { className?: string }) {
   )
 }
 
-export function ContactSection() {
-  const featured = testimonials.slice(0, 3)
+type TestimonialMessage = { role: string; text: string }
+
+export async function ContactSection() {
+  const tContact = await getTranslations('Contact')
+  const tTestimonials = await getTranslations('Testimonials')
+  const testimonialItems = tTestimonials.raw('items') as TestimonialMessage[]
+  const featured = testimonialMeta.slice(0, 3)
 
   return (
     <section id="contact" className="py-24 px-8 md:px-16 border-t border-border bg-bg">
@@ -27,17 +33,16 @@ export function ContactSection() {
         <div className="lg:w-1/3 shrink-0">
           <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-[rgb(0_229_204/0.3)] bg-[rgb(0_229_204/0.05)]">
             <span className="w-2 h-2 rounded-full animate-pulse bg-accent" />
-            <span className="text-sm font-mono text-accent">Open to opportunities</span>
+            <span className="text-sm font-mono text-accent">{tContact('badge')}</span>
           </div>
 
           <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-primary">
-            Open to full-time opportunities and freelance projects
+            {tContact('heading')}
           </h2>
 
           <p className="mb-10 leading-relaxed text-muted">
-            Looking for a dedicated specialist for your team or need help with a specific project? Send me an email or contact me via your preferred platform.
+            {tContact('description')}
           </p>
-
 
           <div className="flex flex-col gap-4">
             {[
@@ -60,7 +65,7 @@ export function ContactSection() {
 
         {/* Right — testimonials */}
         <div className="lg:w-2/3 flex flex-col gap-3">
-          <h3 className="text-2xl font-semibold text-white/80 mb-2">What People Say</h3>
+          <h3 className="text-2xl font-semibold text-white/80 mb-2">{tTestimonials('heading')}</h3>
           <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-3 h-full">
             {/* First card spans full height */}
             <div className="row-span-2 rounded-2xl p-7 flex flex-col bg-[linear-gradient(135deg,#9B6ED5,#7B4DB5)]">
@@ -70,10 +75,10 @@ export function ContactSection() {
                   {featured[0].author.split(' ').map(w => w.charAt(0)).join('')}
                 </div>
               </div>
-              <p className="text-xs leading-relaxed text-white/90 flex-1">{featured[0].text}</p>
+              <p className="text-xs leading-relaxed text-white/90 flex-1">{testimonialItems[0].text}</p>
               <div className="mt-6">
                 <p className="text-sm font-semibold text-white">— {featured[0].author}</p>
-                <p className="text-xs text-white/60">{featured[0].role}</p>
+                <p className="text-xs text-white/60">{testimonialItems[0].role}</p>
               </div>
             </div>
 
@@ -85,10 +90,10 @@ export function ContactSection() {
                   {featured[1].author.split(' ').map(w => w.charAt(0)).join('')}
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-white/90 flex-1">{featured[1].text}</p>
+              <p className="text-sm leading-relaxed text-white/90 flex-1">{testimonialItems[1].text}</p>
               <div className="mt-4">
                 <p className="text-sm font-semibold text-white">— {featured[1].author}</p>
-                <p className="text-xs text-white/60">{featured[1].role}</p>
+                <p className="text-xs text-white/60">{testimonialItems[1].role}</p>
               </div>
             </div>
 
@@ -100,10 +105,10 @@ export function ContactSection() {
                   {featured[2].author.split(' ').map(w => w.charAt(0)).join('')}
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-white/90 flex-1">{featured[2].text}</p>
+              <p className="text-sm leading-relaxed text-white/90 flex-1">{testimonialItems[2].text}</p>
               <div className="mt-4">
                 <p className="text-sm font-semibold text-white">— {featured[2].author}</p>
-                <p className="text-xs text-white/60">{featured[2].role}</p>
+                <p className="text-xs text-white/60">{testimonialItems[2].role}</p>
               </div>
             </div>
           </div>

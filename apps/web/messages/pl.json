@@ -1,0 +1,135 @@
+{
+  "Metadata": {
+    "title": "Tetiana Kuzenkova — Inżynier Front-End",
+    "description": "Starszy Inżynier Front-End specjalizujący się w React, Next.js, TypeScript i skalowalnych systemach UI.",
+    "keywords": "Inżynier Front-End,React,Next.js,TypeScript,Architektura UI"
+  },
+  "Nav": {
+    "home": "strona główna",
+    "expertise": "ekspertyza",
+    "experience": "doświadczenie",
+    "contact": "kontakt"
+  },
+  "Footer": {
+    "copyright": "© {year} Tetiana Kuzenkova"
+  },
+  "Hero": {
+    "badge": "Dostępna dla ofert",
+    "role": "Inżynier Front-end",
+    "tagline": "10+ lat tworzenia wydajnych, dostępnych i pięknie zaprojektowanych interfejsów. Specjalizacja w ekosystemach React, systemach projektowania i przepływach pracy wspieranych przez AI.",
+    "ctaContact": "Skontaktuj się",
+    "ctaCv": "Pobierz CV",
+    "scroll": "przewiń",
+    "scrollAriaLabel": "Przewiń do Moich Kompetencji"
+  },
+  "Expertise": {
+    "heading": "Moje Kompetencje",
+    "cards": [
+      {
+        "title": "Frontend",
+        "subtitle": "Architektura",
+        "description": "Tworzenie skalowalnych, łatwych w utrzymaniu aplikacji React i Next.js z konfiguracją Monorepo, współdzielonymi bibliotekami UI i solidnymi wzorcami zarządzania stanem."
+      },
+      {
+        "title": "Systemy UI &",
+        "subtitle": "Dostępność",
+        "description": "Tworzenie systemów projektowania z Radix UI i React Aria, zapewnienie zgodności z WCAG, nawigacji klawiaturowej i płynnych doświadczeń użytkownika na wszystkich urządzeniach."
+      },
+      {
+        "title": "Rozwój",
+        "subtitle": "Wspierany przez AI",
+        "description": "Wykorzystanie Claude Code, MCP i narzędzi wspomaganych przez AI do automatyzacji scaffoldingu, przyspieszenia dostarczania funkcji i integracji inteligentnych przepływów pracy."
+      }
+    ]
+  },
+  "Experience": {
+    "heading": "Doświadczenie Zawodowe",
+    "projectLabel": "Projekt:",
+    "teamLabel": "Zespół:",
+    "items": [
+      {
+        "role": "Główny Inżynier Front-end (Rozwój Wspierany przez AI)",
+        "company": "Gentle Code",
+        "project": "Platforma FSM wspierana przez AI",
+        "bullets": [
+          "Zbudowanie wysokowydajnego Monorepo ze współdzielonymi pakietami, zapewniając 100% ponownego użycia kodu między aplikacjami Client i Admin.",
+          "Zaprojektowanie wielokrotnego użytku, dostępnej biblioteki UI z Tailwind CSS v4 i React Aria, zintegrowanej ze Storybook.",
+          "Wdrożenie RBAC z walidacją po stronie serwera i typowaną warstwą API przy użyciu schematów Zod.",
+          "Stworzenie 20+ poleceń CLI Claude Code do automatycznego scaffoldingu standaryzowanych modułów funkcji.",
+          "Integracja MCP (Model Context Protocol) dla wspomaganej przez AI integracji API."
+        ]
+      },
+      {
+        "role": "Starszy Inżynier Front-end",
+        "company": "Gentle Code",
+        "project": "CRM Usług Merchantów",
+        "bullets": [
+          "Zaprojektowanie złożonych, wieloetapowych formularzy z walidacją opartą na schemacie i wydajnym zarządzaniem stanem.",
+          "Integracja REST API i FusionAuth dla bezpiecznego uwierzytelniania merchantów i zarządzania sesjami.",
+          "Opracowanie wielokrotnego użytku biblioteki komponentów UI i responsywnych układów.",
+          "Dostosowanie motywów Zendesk Help Center i tworzenie niestandardowych stron.",
+          "Poprawa wydajności przez wdrożenie lazy loading i strategiczne refaktoryzowanie kodu."
+        ]
+      },
+      {
+        "role": "Inżynier Front-end",
+        "company": "Gentle Code",
+        "project": "Oprogramowanie do Zarządzania Transportem (TMS)",
+        "bullets": [
+          "Opracowanie systemu dwuplatformowego: Aplikacja Rezerwacji Klientów i Panel Administracyjny.",
+          "Zbudowanie biblioteki komponentów wielokrotnego użytku, skracając czas tworzenia nowych funkcji.",
+          "Zapewnienie zgodności z Web Accessibility (A11y), w tym nawigacja tylko klawiaturą.",
+          "Dostarczenie responsywnych interfejsów z podejściem mobile-first."
+        ]
+      },
+      {
+        "role": "Inżynier Front-end & Projektant UX",
+        "company": "Gentle Code",
+        "project": "Wewnętrzne aplikacje webowe",
+        "bullets": [
+          "Realizacja projektowania UI i szybkiego prototypowania aplikacji webowych.",
+          "Opracowanie i utrzymanie warstwy frontend w środowisku .NET.",
+          "Optymalizacja zasobów wizualnych za pomocą SVG, niestandardowych czcionek ikon i sprite'ów obrazów.",
+          "Dostarczenie pixel-perfect, responsywnych, kompatybilnych z różnymi przeglądarkami układów."
+        ]
+      },
+      {
+        "role": "Deweloper HTML/CSS",
+        "company": "Rainboweb Studio",
+        "project": "50+ projektów webowych dla klientów",
+        "bullets": [
+          "Pomyślne zrealizowanie 50+ projektów webowych z wykonaniem pixel-perfect.",
+          "Wdrożenie układów kompatybilnych z różnymi przeglądarkami zgodnie ze standardami W3C.",
+          "Współpraca w zespole w celu dotrzymania napiętych terminów w środowisku studia o dużym wolumenie."
+        ]
+      },
+      {
+        "role": "Magister Technologii Wydawniczych",
+        "company": "Charkowski Narodowy Uniwersytet Radioelektroniki",
+        "bullets": []
+      }
+    ]
+  },
+  "Testimonials": {
+    "heading": "Co Mówią Inni",
+    "items": [
+      {
+        "role": "Inżynier Front-end",
+        "text": "Praca z Tetianą była niesamowitym doświadczeniem. Z ponad 10-letnim doświadczeniem wnosi głęboką wiedzę do każdej dyskusji, szczególnie w zakresie wydajności React i Next.js. Wyróżnia ją wyjątkowe oko do UI/UX - nie tylko buduje interfejsy; projektuje intuicyjne, wysokowydajne systemy UI z drobiazgową dbałością o szczegóły i dostępność. Jej zaangażowanie w doświadczenie dewelopera i jakość kodu jest znakomite; jej przeglądy kodu są wnikliwe, a modułowe systemy, które tworzy, są najwyższej klasy. To inżynierka, która sprawia, że cały proces tworzenia oprogramowania jest płynniejszy i efektywniejszy."
+      },
+      {
+        "role": "React | Full Stack Developer",
+        "text": "Tatiana to fantastyczna koleżanka z zespołu. Ma bystre oko do szczegółów UI i pisze bardzo czysty, łatwy w utrzymaniu kod. Każdy zespół miałby szczęście ją mieć."
+      },
+      {
+        "role": "Kierownik Zespołu QA | Menedżer Testów ISTQB",
+        "text": "Naprawdę cieszyłam się z pracy z Tatianą. Jest bardzo mocnym Frontend Leadem, który dostarcza wysokiej jakości rozwiązania szybko i przemyślanie. Komunikacja z nią jest zawsze łatwa i produktywna, a ona tworzy świetną atmosferę współpracy w zespole. Z przyjemnością polecam ją zarówno jako utalentowaną deweloperkę, jak i świetnego lidera zespołu."
+      }
+    ]
+  },
+  "Contact": {
+    "badge": "Otwarta na oferty",
+    "heading": "Otwarta na oferty pełnoetatowe i projekty freelance",
+    "description": "Szukasz dedykowanego specjalisty do swojego zespołu lub potrzebujesz pomocy przy konkretnym projekcie? Napisz do mnie e-mail lub skontaktuj się za pośrednictwem preferowanej platformy."
+  }
+}

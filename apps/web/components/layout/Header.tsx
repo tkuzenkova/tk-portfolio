@@ -1,27 +1,47 @@
 'use client'
 
 import { useActiveSection } from '@/hooks/useActiveSection'
+import { usePathname, useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@tk/ui'
+import { LanguageSwitcher } from '@tk/ui/language-switcher'
 import { Menu } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+import { useEffect, useState, useTransition } from 'react'
 
-const navItems = [
-  { num: '01', label: 'home',       href: '#home' },
-  { num: '02', label: 'expertise',  href: '#expertise' },
-  { num: '03', label: 'experience', href: '#experience' },
-  { num: '04', label: 'contact',    href: '#contact' },
-]
+const LOCALES = [
+  { code: 'en', label: 'EN' },
+  { code: 'pl', label: 'PL' },
+  { code: 'uk', label: 'UK' },
+] as const
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const activeSection = useActiveSection()
+  const t = useTranslations('Nav')
+  const locale = useLocale()
+  const pathname = usePathname()
+  const router = useRouter()
+  const [isPending, startTransition] = useTransition()
+
+  const navItems = [
+    { num: '01', id: 'home',       label: t('home'),       href: '#home' },
+    { num: '02', id: 'expertise',  label: t('expertise'),  href: '#expertise' },
+    { num: '03', id: 'experience', label: t('experience'), href: '#experience' },
+    { num: '04', id: 'contact',    label: t('contact'),    href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  function handleLocaleSwitch(next: string) {
+    startTransition(() => {
+      router.replace(pathname, { locale: next })
+    })
+  }
 
   return (
     <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300', scrolled && 'bg-bg/85 backdrop-blur-md border-b border-accent-2')}>
@@ -36,19 +56,25 @@ export function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map(({ num, label, href }) => (
+          {navItems.map(({ num, id, label, href }) => (
             <a
-              key={label}
+              key={id}
               href={href}
               className={cn(
                 'flex items-start gap-1.5 text-[17px] font-medium font-mono transition-colors',
-                activeSection === label ? 'text-accent' : 'text-primary/50 hover:text-primary',
+                activeSection === id ? 'text-accent' : 'text-primary/50 hover:text-primary',
               )}
             >
               <span className="text-[10px] text-primary/30">{num}</span>
               <span>// {label}</span>
             </a>
           ))}
+          <LanguageSwitcher
+            locales={LOCALES}
+            currentLocale={locale}
+            onSwitch={handleLocaleSwitch}
+            disabled={isPending}
+          />
         </nav>
 
         {/* Mobile: Sheet drawer */}
@@ -67,13 +93,13 @@ export function Header() {
                 </span>
               </div>
               <nav className="flex flex-col gap-4">
-                {navItems.map(({ num, label, href }) => (
-                  <SheetClose key={label} asChild>
+                {navItems.map(({ num, id, label, href }) => (
+                  <SheetClose key={id} asChild>
                     <a
                       href={href}
                       className={cn(
                         'flex items-center gap-2 text-sm font-mono py-2 transition-colors',
-                        activeSection === label ? 'text-accent' : 'text-primary/50 hover:text-primary',
+                        activeSection === id ? 'text-accent' : 'text-primary/50 hover:text-primary',
                       )}
                     >
                       <span className="text-[10px]">{num}</span>
@@ -81,6 +107,14 @@ export function Header() {
                     </a>
                   </SheetClose>
                 ))}
+                <div className="pt-2 border-t border-border">
+                  <LanguageSwitcher
+                    locales={LOCALES}
+                    currentLocale={locale}
+                    onSwitch={handleLocaleSwitch}
+                    disabled={isPending}
+                  />
+                </div>
               </nav>
             </SheetContent>
           </Sheet>
