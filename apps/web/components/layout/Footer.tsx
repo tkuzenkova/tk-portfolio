@@ -2,6 +2,7 @@
 
 import { contact } from '@tk/data'
 import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 
 export function Footer() {
   const t = useTranslations('Footer')
@@ -13,6 +14,9 @@ export function Footer() {
           {t('copyright', { year: new Date().getFullYear() })}
         </p>
         <div className="flex items-center gap-6">
+          <Link href="/game" className="text-sm transition-colors text-muted hover:text-accent">
+            Game
+          </Link>
           {[
             { label: 'LinkedIn', href: contact.linkedin },
             { label: 'GitHub', href: contact.github },

@@ -1,7 +1,7 @@
 'use client'
 
 import { useActiveSection } from '@/hooks/useActiveSection'
-import { usePathname, useRouter } from '@/i18n/navigation'
+import { Link, usePathname, useRouter } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from '@tk/ui'
 import { LanguageSwitcher } from '@tk/ui/language-switcher'
@@ -25,10 +25,10 @@ export function Header() {
   const [isPending, startTransition] = useTransition()
 
   const navItems = [
-    { num: '01', id: 'home',       label: t('home'),       href: '#home' },
-    { num: '02', id: 'expertise',  label: t('expertise'),  href: '#expertise' },
-    { num: '03', id: 'experience', label: t('experience'), href: '#experience' },
-    { num: '04', id: 'contact',    label: t('contact'),    href: '#contact' },
+    { num: '01', id: 'home',       label: t('home') },
+    { num: '02', id: 'expertise',  label: t('expertise') },
+    { num: '03', id: 'experience', label: t('experience') },
+    { num: '04', id: 'contact',    label: t('contact') },
   ]
 
   useEffect(() => {
@@ -47,19 +47,19 @@ export function Header() {
     <header className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300', scrolled && 'bg-bg/85 backdrop-blur-md border-b border-accent-2')}>
       <div className="max-w-7xl mx-auto px-10 md:px-20 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#home"
+        <Link
+          href={{ pathname: '/', hash: 'home' }}
           className="font-mono text-2xl font-bold tracking-wide text-accent hover:opacity-80 transition-opacity"
         >
           TK.<span className="cursor-blink text-[#FF6B2B]">_</span>
-        </a>
+        </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map(({ num, id, label, href }) => (
-            <a
+          {navItems.map(({ num, id, label }) => (
+            <Link
               key={id}
-              href={href}
+              href={{ pathname: '/', hash: id }}
               className={cn(
                 'flex items-start gap-1.5 text-[17px] font-medium font-mono transition-colors',
                 activeSection === id ? 'text-accent' : 'text-primary/50 hover:text-primary',
@@ -67,7 +67,7 @@ export function Header() {
             >
               <span className="text-[10px] text-primary/30">{num}</span>
               <span>// {label}</span>
-            </a>
+            </Link>
           ))}
           <LanguageSwitcher
             locales={LOCALES}
@@ -93,10 +93,10 @@ export function Header() {
                 </span>
               </div>
               <nav className="flex flex-col gap-4">
-                {navItems.map(({ num, id, label, href }) => (
+                {navItems.map(({ num, id, label }) => (
                   <SheetClose key={id} asChild>
-                    <a
-                      href={href}
+                    <Link
+                      href={{ pathname: '/', hash: id }}
                       className={cn(
                         'flex items-center gap-2 text-sm font-mono py-2 transition-colors',
                         activeSection === id ? 'text-accent' : 'text-primary/50 hover:text-primary',
@@ -104,7 +104,7 @@ export function Header() {
                     >
                       <span className="text-[10px]">{num}</span>
                       <span>// {label}</span>
-                    </a>
+                    </Link>
                   </SheetClose>
                 ))}
                 <div className="pt-2 border-t border-border">
